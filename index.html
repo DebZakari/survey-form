@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Survey Form</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 id="title" class="text-center">Portfolio Survey Form</h1>
+            <p id="description" class="description text-center">Thank you for taking the time to help me improve my own portfolio website</p>
+        </header>
+        <main>
+            <form id="survey-form">
+                <div class="form-group">
+                    <label for="name" id="name-label">Name</label>
+                    <input id="name" name="name" class="form-control" placeholder="Enter your name" required>
+                </div> 
+                <div class="form-group">
+                    <label for="age" id="age-label">Age <span class="clues">(optional)</span></label>
+                    <input type="number" min="10" max="150" name="age" id="age" class="form-control" placeholder="Age">
+                </div>
+                <div class="form-group">
+                    <label for="email" id="email-label">Email</label>
+                    <input type="email" name="email" id="email" class="form-control" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="number" id="number-label">Phone Number <span class="clues">(optional)</span></label>
+                    <label for="number"><span class="ph-code-label">+63</span><input type="number" id="number" class="form-control" min="9000000000" max="9999999999" placeholder="Mobile Number"></label>
+                </div>
+                <div class="form-group">
+                    <p>Civil Status</p>
+                    <select id="civil-status" name="civil-status" class="form-control" required>
+                        <option disabled selected value>Select your civil status</option>
+                        <option value="single">Single</option>
+                        <option value="relationship">In a relationship</option>
+                        <option value="married">Married</option>
+                        <option value="divorced">Divorced</option>
+                        <option value="widowed">Widowed</option>
+                        <option value="N/A">Rather not say</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <p>Did you like my portfolio website?</p>
+                    <label>
+                        <input type="radio" id="user-like" name="user-like" class="input-radio" value="yes" checked> Yes
+                    </label>
+                    <label>
+                        <input type="radio" id="user-like" name="user-like" class="input-radio" value="no"> No
+                    </label>
+                    <label>
+                        <input type="radio" id="user-like" name="user-like" class="input-radio" value="maybe"> Maybe
+                    </label>
+                </div>
+                <div class="form-group">
+                    <p>Where did you find out about my portfolio website?</p>
+                    <select id="dropdown" name="dropdown" class="form-control" required>
+                        <option disabled selected value>Select an option</option>
+                        <option value="se">Search Engine (e.g., Google, Bing)</option>
+                        <option value="sm">Social Media (e.g., LinkedIn, Twitter, Facebook)</option>
+                        <option value="pr">Personal Referral</option>
+                        <option value="pn">Professional Network</option>
+                        <option value="ol">Online Forum or Community</option>
+                        <option value="port">Portfolio Showcase Platform (e.g., Behance, Dribbble)</option>
+                        <option value="blog">Other Website or Blog</option>
+                        <option value="job">Job Board (e.g., Indeed, LinkedIn Jobs)</option>
+                        <option value="wc">Workshop or Conference</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <p>What would you like to see improved? <span class="clues">(Check all that apply)</span></p>
+                    <label>
+                        <input type="checkbox" class="input-checkbox" name="prefer" value="dl"> Design/Layout
+                    </label>
+                    <label>
+                        <input type="checkbox" class="input-checkbox" name="prefer" value="cp"> Content Presentation
+                    </label>
+                    <label>
+                        <input type="checkbox" class="input-checkbox" name="prefer" value="nav"> Navigation
+                    </label>
+                    <label>
+                        <input type="checkbox" class="input-checkbox" name="prefer" value="ls"> Loading Speed
+                    </label>
+                    <label>
+                        <input type="checkbox" class="input-checkbox" name="prefer" value="mr"> Mobile Responsiveness
+                    </label>
+                    <label>
+                        <input type="checkbox" class="input-checkbox" name="prefer" value="ps"> Portfolio Samples Quality
+                    </label>
+                    <label>
+                        <input type="checkbox" class="input-checkbox" name="prefer" value="ci"> Contact Information Visibility
+                    </label>
+                    <label>
+                        <input type="checkbox" class="input-checkbox" name="prefer" value="ux"> Overall User Experience
+                    </label>
+                    <label>
+                        <input type="checkbox" class="input-checkbox" name="prefer" value="other" id="other-check"> Other <span class="clues">(Please specify)</span>
+                    </label>
+                    <label>
+                        <textarea class="other-textarea" name="other-prefer" value="" id="other-text" placeholder="Please specify" style="display: none;"></textarea>
+                    </label>
+                </div>
+
+                <script>
+                    document.getElementById('other-check').addEventListener('change', function() {
+                        document.getElementById('other-text').style.display = this.checked ? 'block' : 'none';
+                        document.getElementById('other-text').required = this.checked;
+                    });
+                </script>
+
+                <div class="form-group">
+                    <p>Any comments or suggestions? <span class="clues">(optional)</span></p>
+                    <textarea id="comment" name="comment" class="input-textarea" placeholder="Enter your comments here..." spellcheck="false"></textarea>
+                </div>
+                <div class="form-group">
+                    <button type="submit" id="submit" class="submit-button">Submit</button>
+                </div>
+            </form>
+        </main>
+        <footer>
+
+        </footer>
+    </div>
+</body>
+</html>
